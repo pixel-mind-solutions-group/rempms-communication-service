@@ -1,5 +1,5 @@
 server:
-  port: 8184
+  port: ${APP_PORT:8184}
 
 ##DB properties
 spring:
