@@ -52,6 +52,7 @@ public class WebSecurityConfig {
                 .authorizeHttpRequests(
                         request -> request
                                 .requestMatchers("/health/healthChecker").permitAll()
+                                .requestMatchers("/actuator/prometheus/**").permitAll()
                                 .requestMatchers("/api/communication/**").hasAuthority(RolePermissionsConstants.PERMISSION_COMMUNICATION_SERVICE)
                                 .anyRequest().authenticated()
                 ).sessionManagement(ses -> ses.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
